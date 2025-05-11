@@ -1,3 +1,6 @@
+import imgPath from "../assets/hero.png";
+import videoPath from "../assets/sample.webm";
+
 export default function UoftHacks() {
   const data = [
     { type: "h1", content: "UofT Hacks 13 — Proposal by Aman Meherally" },
@@ -59,7 +62,7 @@ export default function UoftHacks() {
       content:
         "Below is a low-resolution export of my Figma design for the hero section. This is going to be the first section of the landing page.",
     },
-    { type: "img", content: "/src/assets/hero.png", alt: "Hero" },
+    { type: "img", content: imgPath, alt: "Hero" },
     {
       type: "p",
       content:
@@ -75,7 +78,7 @@ export default function UoftHacks() {
       content:
         "I am going to implement this using some animation tools. In example of a collaborative project I am currently working on which required an animation, I made this loading animation. The project we are working on is a platform that connects students together in the form of a network, which is what inspired this design.",
     },
-    { type: "video", content: "/src/assets/sample.webm" },
+    { type: "video", content: videoPath },
     {
       type: "p",
       content:
