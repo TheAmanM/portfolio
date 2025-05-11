@@ -4,6 +4,8 @@
 @theme {
   --color-purple: #dddaff;
   --color-blue: #bfd1ff;
+
+  --font-open-sans: "Open Sans" "Courier New", Courier, sans-serif;
 }
 
 h1,
