@@ -10,11 +10,13 @@ export default function Navbar() {
   const linksData = [
     { name: "About", href: "#about" },
     { name: "Projects", href: "#projects" },
-    { name: "Book a call", href: "#book" },
+    { name: "Get in touch", href: "#contact" },
   ];
   return (
     <div className="flex px-12 max-md:px-6 py-6 items-center justify-between fixed w-screen z-1">
-      <h1 className="text-2xl max-md:text-xl font-bold">Aman Meherally</h1>
+      <a href="/">
+        <h1 className="text-2xl max-md:text-xl font-bold ">Aman Meherally</h1>
+      </a>
       <svg
         stroke="currentColor"
         fill="none"
@@ -55,7 +57,14 @@ export default function Navbar() {
         {linksData.map((item) => {
           return (
             <li className="float-left ml-12 max-md:ml-6 max-md:mt-4">
-              <a href={item.href}>{item.name}</a>
+              <a
+                href={item.href}
+                onClick={() => {
+                  alert("Currently under construction!");
+                }}
+              >
+                {item.name}
+              </a>
             </li>
           );
         })}
