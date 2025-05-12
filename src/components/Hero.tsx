@@ -104,7 +104,21 @@ export default function Hero() {
           </p>
           <p className="font-medium text-xl mb-12">Familiar?</p>
           <a href="mailto:amanmeherally@gmail.com">
-            <button className="bg-black text-white px-6 py-3 rounded-full cursor-pointer">
+            <button className="bg-black text-white px-6 py-3 rounded-full cursor-pointer flex justify-between items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="white"
+                className="size-6 mr-3"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+                />
+              </svg>
               Get in touch
             </button>
           </a>
@@ -140,7 +154,21 @@ export default function Hero() {
           </p>
           <p className="font-medium text-sm mb-12">Familiar?</p>
           <a href="mailto:amanmeherally@gmail.com">
-            <button className="bg-black text-white px-6 py-3 rounded-full">
+            <button className="bg-black text-white px-6 py-3 rounded-full flex justify-between items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="white"
+                className="size-6 mr-3"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+                />
+              </svg>
               Get in touch
             </button>
           </a>
