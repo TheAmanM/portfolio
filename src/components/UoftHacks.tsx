@@ -1,5 +1,5 @@
 import imgPath from "../assets/hero.png";
-import videoPath from "../assets/sample.webm";
+import videoPath from "../assets/sample.mp4";
 
 export default function UoftHacks() {
   const data = [
@@ -158,8 +158,8 @@ export default function UoftHacks() {
               <video
                 src={item.content}
                 className="w-full rounded-2xl my-8"
-                loop
-                autoPlay
+                loop={true}
+                autoPlay={true}
               />
             );
           } else if (item.type === "ol") {
