@@ -1,4 +1,5 @@
 import type { JSX } from "react";
+import hero from "./../assets/constants/hero.png";
 
 export default function Hero() {
   const strokePath =
@@ -65,7 +66,14 @@ export default function Hero() {
         >
           <path d={strokePath} strokeWidth={2} stroke="white"></path>
         </svg>
-        <div className="absolute aspect-[9/16] h-[80%] bg-gray-500 bottom-0 left-auto right-auto ml-[50%] translate-x-[-50%]"></div>
+        {/* <div className="absolute h-[80%] border-1 bottom-0 left-auto right-auto ml-[50%] translate-x-[-50%]"> */}
+        <div className="absolute bottom-0 left-[15%] right-[15%] top-24">
+          <img
+            src={hero}
+            alt="Hero"
+            className="object-contain absolute bottom-0 left-0 right-0"
+          />
+        </div>
         <svg
           viewBox="0 0 241 245"
           fill="none"
