@@ -8,16 +8,18 @@
   --font-open-sans: "Open Sans" "Courier New", Courier, sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Open Sans" "Courier New", Courier, sans-serif;
-}
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Open Sans" "Courier New", Courier, sans-serif;
+  }
 
-p {
-  font-family: "Open Sans" "Courier New", Courier, sans-serif;
-  font-weight: 300;
+  p {
+    font-family: "Open Sans" "Courier New", Courier, sans-serif;
+    font-weight: 300;
+  }
 }
