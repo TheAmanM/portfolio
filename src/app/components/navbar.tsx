@@ -34,8 +34,8 @@ export default function Navbar() {
         <ul className="gap-12 hidden lg:flex">
           {NAV_LINKS.map((link) => {
             return (
-              <a href={link.href}>
-                <li key={link.href}>{link.name}</li>
+              <a href={link.href} key={link.href}>
+                <li>{link.name}</li>
               </a>
             );
           })}
@@ -43,6 +43,7 @@ export default function Navbar() {
         <Button
           variant={"primary"}
           size={"md"}
+          hidden
           className="hidden lg:block"
           href="#contact"
         >

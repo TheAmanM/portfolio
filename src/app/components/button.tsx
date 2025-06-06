@@ -49,7 +49,7 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
  */
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ href, className, variant, size, ...props }, ref) => (
-    <a href={href}>
+    <a href={href} hidden={props.hidden}>
       <button
         ref={ref}
         className={cn(buttonVariants({ variant, size }), className)}

@@ -3,10 +3,12 @@ import Navbar from "./components/navbar";
 
 import heroImage from "@/assets/hero.png";
 import { Button } from "./components/button";
+import GridBackground from "./components/background";
 
 export default function Home() {
   return (
     <>
+      <GridBackground cellSize={60} />
       <Navbar />
       <main className="h-svh w-svw flex flex-col items-start justify-center px-4 lg:px-12 gap-8 lg:gap-12 max-w-[100rem] mx-auto">
         <div className="flex items-center">
