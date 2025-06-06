@@ -43,7 +43,6 @@ export default function Navbar() {
         <Button
           variant={"primary"}
           size={"md"}
-          hidden
           className="hidden lg:block"
           href="#contact"
         >

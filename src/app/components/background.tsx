@@ -64,7 +64,7 @@ export default function GridBackground({ cellSize }: GridProps) {
           height={cellSize}
           fill={fill}
           stroke="#070810"
-          strokeOpacity={0.2}
+          strokeOpacity={0.1}
           strokeWidth={1}
         />
       );

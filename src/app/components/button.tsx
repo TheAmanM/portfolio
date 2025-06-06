@@ -1,7 +1,10 @@
+"use client";
+
 // components/ui/button.tsx
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@sglara/cn";
+import { useRouter } from "next/navigation";
 
 /**
  * Base styles shared by every button variant
@@ -48,14 +51,19 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
  * Reusable Button
  */
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ href, className, variant, size, ...props }, ref) => (
-    <a href={href} hidden={props.hidden}>
+  ({ href, className, variant, size, ...props }, ref) => {
+    const router = useRouter();
+    return (
       <button
         ref={ref}
         className={cn(buttonVariants({ variant, size }), className)}
         {...props}
+        onClick={() => {
+          router.push(href);
+        }}
       />
-    </a>
-  )
+    );
+  }
 );
+
 Button.displayName = "Button";
