@@ -27,7 +27,7 @@ const buttonVariants = cva(
         /** “View Projects” glass-ghost style */
         ghost:
           "bg-white/15 backdrop-blur-sm border border-white/18 text-white " +
-          "hover:bg-white/25 active:bg-white/30",
+          "hover:bg-white/10 active:bg-white/5",
       },
 
       /** Optional size modifiers */
@@ -45,7 +45,7 @@ const buttonVariants = cva(
 );
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
-  VariantProps<typeof buttonVariants> & { href: string };
+  VariantProps<typeof buttonVariants> & { href?: string };
 
 /**
  * Reusable Button
@@ -58,9 +58,13 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         className={cn(buttonVariants({ variant, size }), className)}
         {...props}
-        onClick={() => {
-          router.push(href);
-        }}
+        onClick={
+          href !== undefined
+            ? () => {
+                router.push(href);
+              }
+            : props.onClick
+        }
       />
     );
   }
