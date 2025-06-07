@@ -16,6 +16,21 @@
   --color-primary: var(--color-primary);
 }
 
+@layer utilities {
+  .animation-pause {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes slide-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;

@@ -5,6 +5,51 @@ import heroImage from "@/assets/hero.png";
 import { Button } from "./components/button";
 import GridBackground from "./components/background";
 
+import nextjsLogo from "@/assets/logos/nextjs.svg";
+import tsLogo from "@/assets/logos/ts.svg";
+import nodeLogo from "@/assets/logos/node.svg";
+import pythonLogo from "@/assets/logos/python.svg";
+import supabaseLogo from "@/assets/logos/supabase.svg";
+import firebaseLogo from "@/assets/logos/firebase.svg";
+import flaskLogo from "@/assets/logos/flask.svg";
+import geminiLogo from "@/assets/logos/gemini.svg";
+import electronLogo from "@/assets/logos/electron.svg";
+
+function LogoRow() {
+  const logoImages = [
+    nextjsLogo,
+    tsLogo,
+    nodeLogo,
+    pythonLogo,
+    supabaseLogo,
+    firebaseLogo,
+    flaskLogo,
+    geminiLogo,
+    electronLogo,
+  ];
+  const logos = (keyOffset: number) => (
+    <div className="inline-block w-max animate-[slide-left_20s_linear_infinite] group-hover:[animation-play-state:paused]">
+      {logoImages.map((logo, index) => {
+        return (
+          <Image
+            key={index + keyOffset}
+            className="mx-4 inline h-12 w-auto ml-20 align-bottom opacity-40"
+            src={logo}
+            alt="Logo"
+          />
+        );
+      })}
+    </div>
+  );
+
+  return (
+    <>
+      {logos(0)}
+      {logos(logoImages.length)}
+    </>
+  );
+}
+
 export default function Home() {
   return (
     <>
@@ -33,6 +78,14 @@ export default function Home() {
           </Button>
         </div>
       </main>
+      <section className="px-4 lg:px-12 max-w-[100rem] mx-auto translate-y-[-60%]">
+        <h2 className="text-center font-bold text-white/50 uppercase tracking-widest text-lg">
+          Tools I've worked with
+        </h2>
+        <div className="w-full group relative overflow-hidden whitespace-nowrap  py-10 [mask-image:_linear-gradient(to_right,_transparent_0,_white_128px,white_calc(100%-128px),_transparent_100%)]">
+          <LogoRow />
+        </div>
+      </section>
     </>
   );
 }
