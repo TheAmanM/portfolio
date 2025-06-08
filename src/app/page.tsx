@@ -57,7 +57,14 @@ export default function Home() {
       <Navbar />
       <main className="h-svh w-svw flex flex-col items-start justify-center px-4 lg:px-12 gap-8 lg:gap-12 max-w-[100rem] mx-auto">
         <div className="flex items-center">
-          <Image src={heroImage} alt="Hero" className="size-12" />
+          <Image
+            src="https://media.licdn.com/dms/image/v2/D4D03AQGCYJSBB6fgbw/profile-displayphoto-shrink_800_800/B4DZdJvXYkGkAc-/0/1749288843090?e=1755129600&v=beta&t=KyhdIIcTWR1mX13FT2h0Eog94RQyLb8Zkev4X4zCOhg"
+            width={48}
+            height={48}
+            alt="Hero"
+            className="rounded-full"
+            // className="size-12"
+          />
           <div className="bg-primary size-4 rounded-full flex items-center justify-center ml-4">
             <div className="bg-white size-2 rounded-full" />
           </div>
