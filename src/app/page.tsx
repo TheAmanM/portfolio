@@ -15,6 +15,7 @@ import flaskLogo from "@/assets/logos/flask.svg";
 import geminiLogo from "@/assets/logos/gemini.svg";
 import electronLogo from "@/assets/logos/electron.svg";
 import ECommerce from "./sections/ecommerce";
+import EcommerceTransition from "./sections/ecommerce-transition";
 
 function LogoRow() {
   const logoImages = [
@@ -96,6 +97,7 @@ export default function Home() {
           </div>
         </section>
       </div>
+      <EcommerceTransition />
       <ECommerce />
     </>
   );
