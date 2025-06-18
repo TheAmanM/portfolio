@@ -16,6 +16,7 @@ import geminiLogo from "@/assets/logos/gemini.svg";
 import electronLogo from "@/assets/logos/electron.svg";
 import ECommerce from "./sections/ecommerce";
 import EcommerceTransition from "./sections/ecommerce-transition";
+import DevProjects from "./sections/dev-projects";
 
 function LogoRow() {
   const logoImages = [
@@ -96,6 +97,7 @@ export default function Home() {
             <LogoRow />
           </div>
         </section>
+        <DevProjects />
       </div>
       <EcommerceTransition />
       <ECommerce />
