@@ -8,12 +8,13 @@ import floorImage from "@/assets/ecommerce/floor.png";
 
 const sourceSerif4 = Source_Serif_4({
   subsets: ["latin"],
+  axes: ["opsz"],
 });
 
 export default function ECommerce() {
   return (
     <section className={cn(sourceSerif4.className, "bg-[#FFF8EA]")}>
-      <div className="flex flex-col lg:flex-row mx-8 h-[80svh]">
+      <div className="flex flex-col lg:flex-row max-w-[100rem] mx-auto px-4 lg:px-12 h-[80svh]">
         <div className="lg:grow shrink basis-0 py-6 px-8 lg:px-12 xl:px-20 text-black max-lg:text-center lg:h-fit lg:my-auto">
           <h1
             className="font-light text-4xl md:text-6xl lg:font-normal lg:text-7xl"
@@ -32,7 +33,7 @@ export default function ECommerce() {
             Start with one corner. See how it changes everything.
           </p>
 
-          <Button className="bg-green-900 rounded-full text-[#FFF8EA] mt-6 md:mt-8 py-6 md:text-xl lg:mt-8">
+          <Button className="bg-green-900 hover:bg-green-900/85 rounded-full text-[#FFF8EA] mt-6 md:mt-8 py-6 md:text-xl lg:mt-12">
             Shop now
           </Button>
         </div>

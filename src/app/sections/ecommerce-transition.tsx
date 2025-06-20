@@ -1,8 +1,14 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-
 import { useRef } from "react";
+import { Source_Serif_4 } from "next/font/google";
+import { cn } from "@sglara/cn";
+
+const sourceSerif4 = Source_Serif_4({
+  subsets: ["latin"],
+  axes: ["opsz"],
+});
 
 export default function VerticalBarWipe() {
   const containerRef = useRef(null);
@@ -15,7 +21,7 @@ export default function VerticalBarWipe() {
 
   const barCount = 6;
 
-  const barColors = Array(barCount).fill("#f5f0e1");
+  const barColors = Array(barCount).fill("#FFF8EA");
 
   // Bars rise from bottom when the text is near center to 3/4 up
 
@@ -43,12 +49,12 @@ export default function VerticalBarWipe() {
     >
       {/* Section 1 — Initial text */}
 
-      <section className="h-[50vh] flex flex-col items-center justify-center bg-transparent absolute top-0 left-0 right-0">
-        <p className="uppercase font-black tracking-wider text-white/40 text-2xl mb-2">
-          Guess what
+      <section className="h-[50vh] flex flex-col items-center justify-center bg-transparent absolute top-0 left-0 right-0 text-center px-4">
+        <p className="uppercase font-black tracking-wider text-white/40 text-lg lg:text-2xl mb-2 lg:mb-4">
+          SURPRISE!
         </p>
-        <h1 className="text-5xl font-bold text-white">
-          But wait, there's more.
+        <h1 className="text-3xl lg:text-5xl font-bold text-white">
+          Guess what? There's more.
         </h1>
       </section>
 
@@ -74,14 +80,24 @@ export default function VerticalBarWipe() {
         {/* Overlay text */}
 
         <motion.div
-          style={{ opacity: textOpacity, scale: textScale }}
-          className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center z-30 text-center"
+          style={{
+            opacity: textOpacity,
+            scale: textScale,
+            fontFeatureSettings: `"opsz" 60`,
+          }}
+          className={cn(
+            "pointer-events-none absolute inset-0 flex flex-col items-center justify-center z-30 text-center",
+            sourceSerif4.className
+          )}
         >
-          <h1 className="text-5xl font-bold text-black">
+          <h1 className="text-3xl lg:text-5xl font-medium text-black mb-[2ch]">
+            You see...
+          </h1>
+          <h1 className="text-3xl lg:text-5xl font-medium text-black">
             My design philosophy
           </h1>
 
-          <h1 className="text-5xl font-bold text-black">
+          <h1 className="text-3xl lg:text-5xl font-medium text-black">
             is a little <span className="text-green-900">different</span>.
           </h1>
         </motion.div>
