@@ -17,6 +17,7 @@ import electronLogo from "@/assets/logos/electron.svg";
 import ECommerce from "./sections/ecommerce";
 import EcommerceTransition from "./sections/ecommerce-transition";
 import DevProjects from "./sections/dev-projects";
+import ProofEcommerce from "./components/proof-ecommerce";
 
 function LogoRow() {
   const logoImages = [
@@ -101,6 +102,7 @@ export default function Home() {
       </div>
       <EcommerceTransition />
       <ECommerce />
+      <ProofEcommerce />
     </>
   );
 }

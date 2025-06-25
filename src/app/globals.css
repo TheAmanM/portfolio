@@ -5,6 +5,8 @@
   --foreground: #171717;
 
   --color-primary: #0469b1;
+
+  --color-background-ecommerce: #fff8ea;
 }
 
 @theme inline {
@@ -14,6 +16,9 @@
   --font-mono: var(--font-geist-mono);
 
   --color-primary: var(--color-primary);
+
+  /* Ecommerce section */
+  --color-background-ecommerce: var(--color-background-ecommerce);
 }
 
 @layer utilities {

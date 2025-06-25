@@ -21,7 +21,7 @@ export default function VerticalBarWipe() {
 
   const barCount = 6;
 
-  const barColors = Array(barCount).fill("#FFF8EA");
+  const barColors = Array(barCount).fill(0);
 
   // Bars rise from bottom when the text is near center to 3/4 up
 
@@ -70,7 +70,7 @@ export default function VerticalBarWipe() {
               style={{
                 y: barTransforms[i],
 
-                backgroundColor: color,
+                backgroundColor: "var(--color-background-ecommerce)",
               }}
               className="w-1/6 h-full origin-bottom"
             />
