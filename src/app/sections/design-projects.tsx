@@ -1,21 +1,46 @@
 "use client";
 
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
+import Image from "next/image";
 import { useRef } from "react";
 import React from "react";
 
-// The larger card for desktop
-function ProjectSummaryCard({
-  title,
-  summary,
-}: {
+type Project = {
+  thumbnail: any;
   title: string;
-  summary: string;
-}) {
+  summary: string[];
+  path?: string;
+  content: any;
+};
+
+const projects: Project[] = [
+  {
+    thumbnail: "https://placehold.co/600x400/png?text=Hello+World",
+    title: "PaperPrep",
+    summary: [
+      "An academic resource platform designed to streamline exam preparation for students by providing centralized access to past papers. It offers a searchable database of exams, categorized by subject and year, allowing for targeted and efficient revision.",
+
+      "As a proof-of-concept design, PaperPrep makes vital study materials readily available, helping students to focus more on studying and less on searching.",
+    ],
+    content: "https://placehold.co/600x1800/png",
+  },
+  {
+    thumbnail: "https://placehold.co/600x400/png?text=Hello+World+2",
+    title: "QuickFlow",
+    summary: [
+      "An interactive flowchart editor designed to enhance accessibility for beginners learning programming by visualizing software development concepts. It features an intuitive drag-and-drop interface, allowing students to construct program logic and understand control flow without the initial complexity of code syntax.",
+      "Developed using React and Firebase, I launched a beta version to gather critical user insights, which directly informed the refinement of the tool for an improved student learning experience.",
+    ],
+    content: "https://placehold.co/600x1800/png",
+  },
+];
+
+// The larger card for desktop
+function ProjectSummaryCard({ project }: { project: Project }) {
   return (
     <div className="rounded-xl border border-gray-200 bg-white p-8 shadow-md">
-      <h3 className="text-2xl font-bold text-black">{title}</h3>
-      <p className="mt-2 text-neutral-600">{summary}</p>
+      <h3 className="text-2xl font-bold text-black">{project.title}</h3>
+      <p className="mt-2 text-neutral-600">{project.summary}</p>
     </div>
   );
 }
@@ -44,11 +69,7 @@ function MobileStickyHeader({
   );
 }
 
-function ProjectSection({
-  project,
-}: {
-  project: { id: number; title: string; summary: string; longContent: string };
-}) {
+function ProjectSection({ project }: { project: Project }) {
   // IMPORTANT: The ref is now on the right-hand (scrolling) column.
   // This ensures our scroll progress is always tied to the long content.
   const contentRef = useRef(null);
@@ -86,7 +107,7 @@ function ProjectSection({
       <div className="relative mx-auto flex max-w-6xl flex-col gap-8 px-4 lg:flex-row lg:gap-16 lg:px-8">
         {/* --- Left Column (Desktop Sticky Card) --- */}
         <div className="hidden w-full lg:sticky top-[100px] lg:block lg:w-1/3 self-start">
-          <ProjectSummaryCard title={project.title} summary={project.summary} />
+          <ProjectSummaryCard project={project} />
           {/* Optional progress bar for the desktop card */}
           <div className="mt-6 h-1 w-full overflow-hidden rounded-full bg-green-900/20">
             <motion.div
@@ -97,30 +118,14 @@ function ProjectSection({
         </div>
 
         {/* --- Right Column (Main Content for ALL screen sizes) --- */}
-        <div ref={contentRef} className="w-full lg:w-2/3">
+        <div ref={contentRef} className="w-full lg:w-2/3 relative aspect-auto">
           {/* Mobile Header is placed here so it sticks relative to its parent section */}
           <MobileStickyHeader
             title={project.title}
             progress={scrollYProgress}
           />
-          <div className="rounded-xl bg-white p-8 shadow-lg">
-            <h4 className="text-xl font-semibold text-black">
-              Full Project Details
-            </h4>
-            <p className="mt-4 text-neutral-800">{project.longContent}</p>
-            <img
-              src="https://via.placeholder.com/600x400?text=Project+Image+1"
-              alt="placeholder"
-              className="my-6 h-auto w-full rounded-lg"
-            />
-            <p className="text-neutral-800">{project.longContent}</p>
-            <img
-              src="https://via.placeholder.com/600x300?text=Project+Image+2"
-              alt="placeholder"
-              className="my-6 h-auto w-full rounded-lg"
-            />
-            <p className="text-neutral-800">{project.longContent}</p>
-          </div>
+          {/* <Image src={project.content} alt={project.content} fill /> */}
+          <img src={project.content} alt={project.title} />
         </div>
       </div>
     </motion.section>
@@ -128,35 +133,10 @@ function ProjectSection({
 }
 
 export default function PortfolioPage() {
-  // ... (No changes to PortfolioPage or the projects array)
-  const projects = [
-    {
-      id: 1,
-      title: "Project Alpha",
-      summary: "A summary of the first amazing project.",
-      longContent:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      id: 2,
-      title: "Project Beta",
-      summary: "The second project was even better.",
-      longContent:
-        "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.",
-    },
-    {
-      id: 3,
-      title: "Project Gamma",
-      summary: "This one changed the world.",
-      longContent:
-        "Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis egestas. In post, a, commodo porttitor, a, faucibus, a, dolor. Ut in, let. Quisque a, dolor. Suspendisse eu, magna. In post, a, dolor.",
-    },
-  ];
-
   return (
     <div className="bg-background-ecommerce text-neutral-800">
-      {projects.map((project) => (
-        <ProjectSection key={project.id} project={project} />
+      {projects.map((project, id: number) => (
+        <ProjectSection key={id} project={project} />
       ))}
     </div>
   );
