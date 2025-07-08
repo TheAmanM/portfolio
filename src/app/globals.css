@@ -7,7 +7,9 @@
   --color-primary: #0469b1;
 
   --color-background-ecommerce: #fff8ea;
-  --color-background-saas: oklch(0.6988 0.1512 69.97);
+  --color-background-saas-start: #f3f5ff;
+  --color-background-saas-end: #d1d5f5;
+  --color-foreground-saas: #6170ff;
 }
 
 @theme inline {
@@ -22,7 +24,9 @@
   --color-background-ecommerce: var(--color-background-ecommerce);
 
   /* SAAS section */
-  --color-background-saas: var(--color-background-saas);
+  --color-background-saas-start: var(--color-background-saas-start);
+  --color-background-saas-end: var(--color-background-saas-end);
+  --color-foreground-saas: var(--color-foreground-saas);
 }
 
 @layer utilities {

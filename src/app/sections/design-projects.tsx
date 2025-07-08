@@ -1,9 +1,10 @@
 "use client";
 
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
-import Image from "next/image";
 import { useRef } from "react";
 import React from "react";
+
+import figmaDesign from "@/assets/ecommerce/designs/figma-desktop.png";
 
 type Project = {
   thumbnail: any;
@@ -22,7 +23,7 @@ const projects: Project[] = [
 
       "As a proof-of-concept design, PaperPrep makes vital study materials readily available, helping students to focus more on studying and less on searching.",
     ],
-    content: "https://placehold.co/600x1800/png",
+    content: figmaDesign.src,
   },
   {
     thumbnail: "https://placehold.co/600x400/png?text=Hello+World+2",
