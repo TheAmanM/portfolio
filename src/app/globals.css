@@ -7,6 +7,7 @@
   --color-primary: #0469b1;
 
   --color-background-ecommerce: #fff8ea;
+  --color-background-saas: oklch(0.6988 0.1512 69.97);
 }
 
 @theme inline {
@@ -19,6 +20,9 @@
 
   /* Ecommerce section */
   --color-background-ecommerce: var(--color-background-ecommerce);
+
+  /* SAAS section */
+  --color-background-saas: var(--color-background-saas);
 }
 
 @layer utilities {

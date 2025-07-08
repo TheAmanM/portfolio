@@ -19,6 +19,7 @@ import EcommerceTransition from "./sections/ecommerce-transition";
 import DevProjects from "./sections/dev-projects";
 import ProofEcommerce from "./sections/proof-ecommerce";
 import DesignProjects from "./sections/design-projects";
+import SaasPage from "./sections/saas-page";
 
 function LogoRow() {
   const logoImages = [
@@ -105,6 +106,7 @@ export default function Home() {
       <ECommerce />
       <ProofEcommerce />
       <DesignProjects />
+      <SaasPage />
     </>
   );
 }
